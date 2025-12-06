@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Export Dist
 
 on:
   push:
@@ -23,3 +23,9 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Upload dist folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-folder
+          path: dist
